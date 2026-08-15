@@ -1,0 +1,23 @@
+[
+  {
+    "tripCode": "GALR210214",
+    "reviewerName": "Jordan Lee",
+    "reviewerEmail": "jordan.lee@example.com",
+    "rating": 5,
+    "comment": "The reef tour was organized well and the guides made the entire trip memorable."
+  },
+  {
+    "tripCode": "DAWR210315",
+    "reviewerName": "Morgan Reed",
+    "reviewerEmail": "morgan.reed@example.com",
+    "rating": 4,
+    "comment": "The resort was comfortable and the activities offered a good balance of adventure and relaxation."
+  },
+  {
+    "tripCode": "GALR210214",
+    "reviewerName": "Taylor Kim",
+    "reviewerEmail": "taylor.kim@example.com",
+    "rating": 5,
+    "comment": "I especially enjoyed the diving experience and would recommend this package to other travelers."
+  }
+]
