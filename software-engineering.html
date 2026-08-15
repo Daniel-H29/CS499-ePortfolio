@@ -1,1 +1,233 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Design & Engineering | Daniel Hernandez</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <h1>Software Design & Engineering</h1>
+        <p>CS 499 ePortfolio Enhancement One</p>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <a href="index.html">Home</a>
+        <a href="software-engineering.html">Software Engineering</a>
+        <a href="algorithms.html">Algorithms & Data Structures</a>
+        <a href="databases.html">Databases</a>
+    </div>
+</nav>
+
+<main class="container">
+
+    <section>
+        <h2>Artifact Overview</h2>
+
+        <p>
+            The artifact used for this enhancement is the Travlr Getaways
+            full-stack web application that I originally developed in CS 465.
+            Travlr uses the MEAN stack, including MongoDB, Express, Angular,
+            and Node.js.
+        </p>
+
+        <p>
+            The application contains a customer-facing website and an
+            administrative Angular interface that communicates with a REST API.
+            The administrative portion allows authenticated users to retrieve,
+            add, and update trip information stored in MongoDB.
+        </p>
+    </section>
+
+    <section>
+        <h2>Original Functionality</h2>
+
+        <p>
+            The original version of Travlr was functional, but several parts of
+            the application contained repeated logic and inconsistent error
+            handling. The Angular TripDataService handled API requests for
+            retrieving, adding, and updating trips, but similar code was repeated
+            across several methods.
+        </p>
+
+        <p>
+            Authentication headers were also constructed in more than one
+            location, which made the service harder to maintain. The application
+            also relied on older Promise conversion functionality when working
+            with Angular HTTP requests.
+        </p>
+    </section>
+
+    <section>
+        <h2>Software Engineering Enhancement</h2>
+
+        <p>
+            For this enhancement, I focused on improving the internal
+            architecture and maintainability of the application instead of
+            only adding a new visual feature.
+        </p>
+
+        <p>
+            I refactored the TripDataService so that common API functionality
+            could be reused throughout the application. The base API location
+            and trip endpoint were centralized rather than being repeated in
+            multiple methods.
+        </p>
+
+        <p>
+            I also created reusable request and authentication functionality.
+            This reduced duplicated code and made the service easier to maintain.
+            Authentication headers can now be created through a common method
+            instead of being manually constructed for each protected request.
+        </p>
+
+        <p>
+            The service was also updated to replace deprecated Promise conversion
+            functionality with a more current RxJS approach using
+            <code>firstValueFrom()</code>.
+        </p>
+
+        <p>
+            Error handling was improved so that the application can provide
+            clearer information when an API request fails. Errors such as an
+            unavailable server, unauthorized request, API error, or unexpected
+            failure can be handled more consistently.
+        </p>
+    </section>
+
+    <section>
+        <h2>User Experience Improvements</h2>
+
+        <p>
+            In addition to the architectural improvements, the application
+            includes confirmation and success feedback when an administrator
+            edits trip information.
+        </p>
+
+        <p>
+            These changes improve communication between the application and
+            the user by making it clearer when an update is about to occur and
+            whether the operation completed successfully.
+        </p>
+    </section>
+
+    <section>
+        <h2>Skills Demonstrated</h2>
+
+        <div class="cards">
+
+            <article class="card">
+                <h3>Full-Stack Development</h3>
+                <p>
+                    Working across Angular, Node.js, Express, REST APIs,
+                    authentication, and MongoDB.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Refactoring</h3>
+                <p>
+                    Reducing duplicated code and reorganizing existing
+                    functionality into reusable methods.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Error Handling</h3>
+                <p>
+                    Improving how API and application errors are identified,
+                    handled, and communicated.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Maintainability</h3>
+                <p>
+                    Creating a clearer service structure that is easier to
+                    understand, modify, and extend.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Authentication</h3>
+                <p>
+                    Centralizing authenticated request handling and working
+                    with JSON Web Tokens.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Modern Framework Practices</h3>
+                <p>
+                    Updating deprecated Angular and RxJS functionality with a
+                    current implementation.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>Course Outcome Alignment</h2>
+
+        <p>
+            This enhancement demonstrates my ability to evaluate an existing
+            computing solution and improve its structure using appropriate
+            software engineering practices.
+        </p>
+
+        <p>
+            It also demonstrates the use of modern computing tools and
+            techniques, including Angular, TypeScript, RxJS, Node.js, REST APIs,
+            and authentication.
+        </p>
+
+        <p>
+            Security is represented through the handling of authenticated API
+            requests and authorization tokens. The enhancement also improves
+            maintainability and communication by creating more consistent
+            application behavior and clearer error messages.
+        </p>
+    </section>
+
+    <section>
+        <h2>Artifact Files</h2>
+
+        <p>
+            The original and enhanced versions of Travlr can be reviewed
+            directly in this repository.
+        </p>
+
+        <a class="button"
+           href="artifacts/original-travlr/">
+            View Original Travlr
+        </a>
+
+        <a class="button"
+           href="artifacts/software-engineering/">
+            View Software Engineering Enhancement
+        </a>
+
+        <a class="button"
+           href="narratives/Enhancement One Narrative- Software Design and Engineering.docx">
+            View Enhancement Narrative
+        </a>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>Daniel Hernandez | CS 499 Computer Science ePortfolio</p>
+    </div>
+</footer>
+
+</body>
+</html>
