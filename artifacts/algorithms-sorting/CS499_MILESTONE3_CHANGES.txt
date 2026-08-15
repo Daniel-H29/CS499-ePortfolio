@@ -1,0 +1,19 @@
+CS 499 Milestone Three - Algorithms and Data Structures Enhancement
+
+Enhancement: Trip Sorting
+
+Modified files:
+1. app_admin/src/app/trip-listing/trip-listing.ts
+   - Imported FormsModule.
+   - Added the SortOption type and sortOption state.
+   - Added sortTrips() using array sorting and comparison functions.
+   - Added parseNumber() to compare formatted prices and trip lengths.
+   - Automatically sorts trips after they are retrieved.
+
+2. app_admin/src/app/trip-listing/trip-listing.html
+   - Added a Sort Trips dropdown.
+   - Added options for Name (A-Z), Price (Low to High), and Trip Length.
+   - Connected the dropdown to sortTrips() with ngModel and a change event.
+
+Testing note:
+Run npm install in app_admin, then npm start. Verify all three dropdown options.
