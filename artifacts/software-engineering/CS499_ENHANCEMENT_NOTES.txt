@@ -1,0 +1,16 @@
+CS 499 Enhancement One - Software Design and Engineering
+
+Primary architectural enhancement:
+- Refactored app_admin/src/app/services/trip-data.service.ts.
+- Replaced repeated URL construction with centralized, read-only API endpoint fields.
+- Replaced deprecated Observable.toPromise() calls with firstValueFrom().
+- Added a reusable executeRequest<T>() method so all API operations use one request pipeline.
+- Added createAuthenticatedHeaders() to remove duplicated token/header construction.
+- Added centralized, contextual HTTP error handling for server connection, authorization,
+  API-provided, and unexpected errors.
+- Updated trip-listing, add-trip, and edit-trip components to present the service's
+  consistent error messages to users.
+
+Earlier usability enhancement retained:
+- Confirmation before saving an edited trip.
+- Success feedback after a trip is updated.
