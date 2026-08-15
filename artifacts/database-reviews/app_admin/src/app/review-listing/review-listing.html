@@ -1,0 +1,98 @@
+<div class="container py-3">
+  <h2>Trip Reviews</h2>
+  <p class="text-muted">
+    Reviews are stored in a separate MongoDB collection and linked to their trip records.
+  </p>
+
+  <div class="card mb-4">
+    <div class="card-body">
+      <h3 class="h5">Add Review</h3>
+      <form #reviewForm="ngForm" (ngSubmit)="addReview()" class="row g-3">
+        <div class="col-md-6">
+          <label for="tripCode" class="form-label">Trip</label>
+          <select id="tripCode" name="tripCode" class="form-select" [(ngModel)]="newReview.tripCode" required>
+            <option *ngFor="let trip of trips" [value]="trip.code">
+              {{ trip.code }} — {{ trip.name }}
+            </option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="rating" class="form-label">Rating</label>
+          <select id="rating" name="rating" class="form-select" [(ngModel)]="newReview.rating" required>
+            <option [ngValue]="5">5 - Excellent</option>
+            <option [ngValue]="4">4 - Very Good</option>
+            <option [ngValue]="3">3 - Good</option>
+            <option [ngValue]="2">2 - Fair</option>
+            <option [ngValue]="1">1 - Poor</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="reviewerName" class="form-label">Reviewer Name</label>
+          <input id="reviewerName" name="reviewerName" class="form-control" [(ngModel)]="newReview.reviewerName" minlength="2" maxlength="60" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="reviewerEmail" class="form-label">Reviewer Email</label>
+          <input id="reviewerEmail" name="reviewerEmail" type="email" class="form-control" [(ngModel)]="newReview.reviewerEmail" required>
+        </div>
+
+        <div class="col-12">
+          <label for="comment" class="form-label">Comment</label>
+          <textarea id="comment" name="comment" class="form-control" rows="3" [(ngModel)]="newReview.comment" minlength="10" maxlength="500" required></textarea>
+        </div>
+
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit" [disabled]="reviewForm.invalid || isSaving">
+            {{ isSaving ? 'Saving...' : 'Add Review' }}
+          </button>
+          <span class="text-muted ms-2">Log in before adding or deleting reviews.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="d-flex flex-wrap gap-2 align-items-end mb-3">
+    <div>
+      <label for="reviewFilter" class="form-label">Filter by Trip</label>
+      <select id="reviewFilter" class="form-select" [(ngModel)]="filterTripCode" (change)="loadReviews()">
+        <option value="">All Trips</option>
+        <option *ngFor="let trip of trips" [value]="trip.code">{{ trip.code }} — {{ trip.name }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div *ngIf="message" class="alert alert-success py-2">{{ message }}</div>
+  <div *ngIf="errorMessage" class="alert alert-danger py-2">{{ errorMessage }}</div>
+
+  <div class="table-responsive">
+    <table class="table table-striped align-middle">
+      <thead>
+        <tr>
+          <th>Trip</th>
+          <th>Reviewer</th>
+          <th>Rating</th>
+          <th>Comment</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let review of reviews">
+          <td>{{ review.tripCode }}<br><small>{{ review.trip?.name }}</small></td>
+          <td>{{ review.reviewerName }}<br><small>{{ review.reviewerEmail }}</small></td>
+          <td>{{ review.rating }}/5</td>
+          <td>{{ review.comment }}</td>
+          <td>{{ review.createdAt | date:'mediumDate' }}</td>
+          <td>
+            <button class="btn btn-sm btn-outline-danger" type="button" (click)="deleteReview(review)">Delete</button>
+          </td>
+        </tr>
+        <tr *ngIf="reviews.length === 0">
+          <td colspan="6" class="text-center text-muted">No reviews found.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<!-- <pre>{{ trips | json }}</pre> -->
+<div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-3">
+  <button (click)="addTrip()" class="btn btn-info">Add Trip</button>
+
+  <div>
+    <label for="trip-sort" class="form-label">Sort Trips</label>
+    <select
+      id="trip-sort"
+      class="form-select"
+      [(ngModel)]="sortOption"
+      (change)="sortTrips()"
+      aria-label="Sort trips"
+    >
+      <option value="name-asc">Name (A–Z)</option>
+      <option value="price-asc">Price (Low to High)</option>
+      <option value="length-asc">Trip Length (Shortest First)</option>
+    </select>
+  </div>
+</div>
+
+<p *ngIf="message" class="text-muted">{{ message }}</p>
+
+<div class="row">
+  <div *ngFor="let trip of trips" class="col-md-4">
+    <app-trip-card [trip]="trip" class="card-deck mt-2"></app-trip-card>
+  </div>
+</div>
