@@ -1,1 +1,267 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms & Data Structures | Daniel Hernandez</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <h1>Algorithms & Data Structures</h1>
+        <p>CS 499 ePortfolio Enhancement Two</p>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <a href="index.html">Home</a>
+        <a href="software-engineering.html">Software Engineering</a>
+        <a href="algorithms.html">Algorithms & Data Structures</a>
+        <a href="databases.html">Databases</a>
+    </div>
+</nav>
+
+<main class="container">
+
+    <section>
+        <h2>Artifact Overview</h2>
+
+        <p>
+            The artifact used for this enhancement is the Travlr Getaways
+            full-stack web application originally developed in CS 465.
+            The administrative portion of Travlr retrieves trip information
+            from the backend and stores the returned records as a collection
+            of Trip objects.
+        </p>
+
+        <p>
+            I selected this application for the algorithms and data structures
+            category because the existing collection of trip objects provided
+            an opportunity to apply algorithmic processing to data that was
+            already being used by the application.
+        </p>
+    </section>
+
+    <section>
+        <h2>Original Functionality</h2>
+
+        <p>
+            In the original application, trip records were retrieved from the
+            REST API and stored in a TypeScript array. Angular then iterated
+            through the array and displayed each trip in the administrative
+            interface.
+        </p>
+
+        <p>
+            Although this worked for displaying the information, the
+            administrator had limited control over how the collection was
+            organized. Trips were primarily displayed in the order they were
+            received from the backend.
+        </p>
+    </section>
+
+    <section>
+        <h2>Sorting Enhancement</h2>
+
+        <p>
+            For my algorithms and data structures enhancement, I added sorting
+            functionality to the administrative trip listing.
+        </p>
+
+        <p>
+            The enhancement works with the existing array of Trip objects and
+            applies comparison logic to organize the collection according to
+            trip properties. This allows the application to process the data
+            before it is displayed rather than simply presenting the records
+            in their original order.
+        </p>
+
+        <p>
+            The sorting functionality improves the usability of the
+            administrative interface because trip information can be organized
+            more efficiently as the collection grows.
+        </p>
+    </section>
+
+    <section>
+        <h2>Data Structures</h2>
+
+        <p>
+            The main data structure involved in this enhancement is an array
+            containing Trip objects. Each Trip object contains several
+            properties describing the travel package.
+        </p>
+
+        <p>
+            Because the records are represented as objects inside an array,
+            comparison operations can examine specific object properties when
+            determining how the collection should be ordered.
+        </p>
+
+        <p>
+            This demonstrates how data structures and algorithms work together.
+            The array provides an organized structure for storing the collection,
+            while the sorting logic determines how the objects within that
+            structure are arranged.
+        </p>
+    </section>
+
+    <section>
+        <h2>Algorithmic Trade-Offs</h2>
+
+        <p>
+            An important consideration for this enhancement was deciding where
+            the sorting operation should occur.
+        </p>
+
+        <p>
+            For the current Travlr application, client-side sorting is an
+            appropriate solution because the number of trip records is relatively
+            small and the collection is already loaded into memory by the
+            Angular application.
+        </p>
+
+        <p>
+            This approach provides responsive sorting without requiring another
+            request to the server every time the user changes the organization
+            of the records.
+        </p>
+
+        <p>
+            However, the same approach may not be appropriate for a much larger
+            dataset. If the application contained thousands or millions of
+            records, retrieving the entire collection and sorting it in the
+            browser could become inefficient.
+        </p>
+
+        <p>
+            In a larger production system, sorting could instead be performed
+            through the backend or directly through MongoDB and combined with
+            pagination. This would reduce the amount of data transferred to the
+            client and limit the number of records that need to be processed
+            at one time.
+        </p>
+    </section>
+
+    <section>
+        <h2>Skills Demonstrated</h2>
+
+        <div class="cards">
+
+            <article class="card">
+                <h3>Arrays</h3>
+                <p>
+                    Managing collections of Trip objects within the Angular
+                    application.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Sorting</h3>
+                <p>
+                    Applying sorting operations to organize application data.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Comparison Logic</h3>
+                <p>
+                    Comparing properties of objects to determine their position
+                    within the collection.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Algorithmic Thinking</h3>
+                <p>
+                    Identifying a practical problem and selecting an appropriate
+                    algorithmic solution.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Scalability</h3>
+                <p>
+                    Considering how the selected solution would perform as the
+                    amount of application data increases.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Angular & TypeScript</h3>
+                <p>
+                    Integrating data-processing functionality into an existing
+                    Angular administrative interface.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>Course Outcome Alignment</h2>
+
+        <p>
+            This enhancement demonstrates my ability to design and evaluate a
+            computing solution using algorithmic principles. I identified a
+            limitation in the way the existing application organized its data
+            and implemented sorting functionality to improve the usefulness of
+            the trip collection.
+        </p>
+
+        <p>
+            The enhancement also demonstrates consideration of design
+            trade-offs. Client-side sorting is appropriate for the current
+            application, while server-side or database-level sorting would be
+            more appropriate if Travlr were working with a significantly larger
+            dataset.
+        </p>
+
+        <p>
+            Implementing the enhancement also required troubleshooting the flow
+            of data between the service, Angular component, and HTML template.
+            This strengthened my understanding of how algorithms can be
+            integrated into a larger software system rather than being used
+            only as isolated programming exercises.
+        </p>
+    </section>
+
+    <section>
+        <h2>Artifact Files</h2>
+
+        <p>
+            The original Travlr application and the enhanced sorting version
+            are available directly in this repository.
+        </p>
+
+        <a class="button"
+           href="artifacts/original-travlr/">
+            View Original Travlr
+        </a>
+
+        <a class="button"
+           href="artifacts/algorithms-sorting/">
+            View Sorting Enhancement
+        </a>
+
+        <a class="button"
+           href="narratives/Enhancement Two Narrative- Algorithms and Data Structures.docx">
+            View Enhancement Narrative
+        </a>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>Daniel Hernandez | CS 499 Computer Science ePortfolio</p>
+    </div>
+</footer>
+
+</body>
+</html>
