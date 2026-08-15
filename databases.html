@@ -1,1 +1,292 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Databases | Daniel Hernandez</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <h1>Databases</h1>
+        <p>CS 499 ePortfolio Enhancement Three</p>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <a href="index.html">Home</a>
+        <a href="software-engineering.html">Software Engineering</a>
+        <a href="algorithms.html">Algorithms & Data Structures</a>
+        <a href="databases.html">Databases</a>
+    </div>
+</nav>
+
+<main class="container">
+
+    <section>
+        <h2>Artifact Overview</h2>
+
+        <p>
+            The artifact used for this enhancement is the Travlr Getaways
+            full-stack web application originally developed in CS 465.
+            Travlr uses MongoDB as its database and Mongoose to define and
+            interact with application data.
+        </p>
+
+        <p>
+            The original database primarily stored trip information such as
+            trip codes, names, resort details, dates, prices, images, and
+            descriptions. The backend REST API allowed the application to
+            retrieve and manage this data.
+        </p>
+    </section>
+
+    <section>
+        <h2>Original Database Design</h2>
+
+        <p>
+            The original Travlr database was functional but relatively simple.
+            Most of the stored data focused on the trip records themselves.
+        </p>
+
+        <p>
+            MongoDB provided persistent storage, while Mongoose was used to
+            define the trip schema and communicate between the Node.js backend
+            and the database.
+        </p>
+
+        <p>
+            The REST API acted as the connection between the frontend and the
+            database. Instead of communicating directly with MongoDB, the
+            application sent requests through API routes and controller logic.
+        </p>
+    </section>
+
+    <section>
+        <h2>Trip Reviews Enhancement</h2>
+
+        <p>
+            For my database enhancement, I expanded the Travlr application by
+            adding Trip Reviews functionality.
+        </p>
+
+        <p>
+            The purpose of this enhancement was to move beyond storing only
+            basic trip information and introduce additional data associated
+            with the travel experience.
+        </p>
+
+        <p>
+            Adding reviews increased the complexity of the database because the
+            application now needed to manage information beyond the original
+            trip records. The enhancement required changes to how review data
+            was represented, retrieved, and integrated into the rest of the
+            full-stack application.
+        </p>
+
+        <p>
+            This demonstrates that database changes often affect more than the
+            database itself. Changes to stored data can also require updates to
+            backend controllers, API routes, application services, and the
+            frontend interface.
+        </p>
+    </section>
+
+    <section>
+        <h2>MongoDB and Mongoose</h2>
+
+        <p>
+            Travlr uses MongoDB for persistent data storage and Mongoose for
+            schema definition and database communication.
+        </p>
+
+        <p>
+            Mongoose provides a structured way for the Node.js application to
+            work with MongoDB documents. By defining expected fields and data
+            types, the application can better control how information is
+            represented and stored.
+        </p>
+
+        <p>
+            Expanding the application with review functionality strengthened my
+            understanding of how database schemas need to support the
+            requirements of the application while remaining organized and
+            maintainable.
+        </p>
+    </section>
+
+    <section>
+        <h2>REST API and CRUD Concepts</h2>
+
+        <p>
+            The database layer is connected to the rest of Travlr through a
+            REST API. Requests move from the frontend to API routes and
+            controllers before Mongoose communicates with MongoDB.
+        </p>
+
+        <p>
+            This structure supports CRUD concepts such as creating, reading,
+            and updating application information while maintaining separation
+            between the user interface and the database.
+        </p>
+
+        <p>
+            The Trip Reviews enhancement required me to think about how new
+            database functionality should be exposed through the API and how
+            the frontend would consume that information.
+        </p>
+    </section>
+
+    <section>
+        <h2>Validation and Security</h2>
+
+        <p>
+            Database security is an important consideration whenever an
+            application accepts information from users.
+        </p>
+
+        <p>
+            User-provided data should be validated before it is stored in the
+            database. Validation helps prevent incomplete, incorrect, or
+            unexpected information from becoming part of the application data.
+        </p>
+
+        <p>
+            Authentication and authorization are also important when database
+            operations can create or modify stored information. The application
+            needs to determine which operations should be publicly available
+            and which should require an authenticated user.
+        </p>
+
+        <p>
+            These considerations reinforced the idea that database development
+            and secure software design are closely connected.
+        </p>
+    </section>
+
+    <section>
+        <h2>Skills Demonstrated</h2>
+
+        <div class="cards">
+
+            <article class="card">
+                <h3>MongoDB</h3>
+                <p>
+                    Working with document-based persistent storage in a
+                    full-stack application.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Mongoose</h3>
+                <p>
+                    Defining application data and communicating between Node.js
+                    and MongoDB.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Database Design</h3>
+                <p>
+                    Expanding an existing data model to support additional
+                    application functionality.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>REST APIs</h3>
+                <p>
+                    Connecting frontend functionality to database operations
+                    through backend routes and controllers.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Validation</h3>
+                <p>
+                    Considering how application data should be checked before
+                    being accepted and stored.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Security</h3>
+                <p>
+                    Considering authentication and authorization when users can
+                    create or modify database information.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>Course Outcome Alignment</h2>
+
+        <p>
+            This enhancement demonstrates my ability to use modern computing
+            tools and techniques to expand an existing application. I worked
+            with MongoDB, Mongoose, Node.js, Express, REST API concepts, and
+            frontend integration.
+        </p>
+
+        <p>
+            It also demonstrates my ability to design and evaluate a computing
+            solution. Adding reviews required me to consider how new data would
+            fit into the existing system and how the database change would
+            affect other application layers.
+        </p>
+
+        <p>
+            Security is represented through consideration of validation,
+            authentication, authorization, and protecting stored information
+            from unauthorized modification.
+        </p>
+
+        <p>
+            The enhancement also demonstrates maintainability and separation of
+            responsibilities by keeping database access behind backend API and
+            controller logic instead of allowing direct frontend access to
+            MongoDB.
+        </p>
+    </section>
+
+    <section>
+        <h2>Artifact Files</h2>
+
+        <p>
+            The original Travlr application and the enhanced Trip Reviews
+            version are available directly in this repository.
+        </p>
+
+        <a class="button"
+           href="artifacts/original-travlr/">
+            View Original Travlr
+        </a>
+
+        <a class="button"
+           href="artifacts/database-reviews/">
+            View Database Enhancement
+        </a>
+
+        <a class="button"
+           href="narratives/Enhancement Three Narrative- Databases.docx">
+            View Enhancement Narrative
+        </a>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>Daniel Hernandez | CS 499 Computer Science ePortfolio</p>
+    </div>
+</footer>
+
+</body>
+</html>
